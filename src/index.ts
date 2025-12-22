@@ -3,8 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { getConnection, closeConnection } from './config/database';
 
-// Importar rutas
-import ejemploRoutes from './routes/ejemplo.routes';
+import routes from './routes/Index.routes'
 
 dotenv.config();
 
@@ -17,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rutas
-app.use('/api/ejemplo', ejemploRoutes);
+app.use('/api/', routes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
